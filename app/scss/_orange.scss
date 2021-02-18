@@ -1,0 +1,15 @@
+.orange{
+    background: $brightRed;
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+    
+}
+
+.whiteh2{
+    color: white;
+    margin: 0;
+
+    @include breakpoint-up(){
+        width: 23ch;
+    }
+}

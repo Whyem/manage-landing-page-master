@@ -1,0 +1,21 @@
+.intro{
+
+    padding-top: 3.9375rem;
+    padding-bottom: 7.875rem;
+   
+    &__text{
+        >p{
+            margin-bottom: 2.625rem;
+        }
+    }
+
+    &__img{
+        >img{
+            width: 33.125rem;
+
+            @include breakpoint-down(){
+                width: 20rem;
+            }
+        }
+    }
+}
