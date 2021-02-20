@@ -2,6 +2,10 @@ html{
     font-size: 100%;
     font-size: 16px;
     box-sizing: border-box;
+
+    @include breakpoint-down(){
+        font-size: 14px;
+    }
 }
 
 *, *::after, *::before{
@@ -36,7 +40,12 @@ h1{
     font-size: 3.3125rem;
     color: $darkBlue;
     line-height: 1.3;
+    font-weight: 900;
     margin-bottom: 2.25rem;
+
+    @include breakpoint-down(){
+        font-size: 2.375rem;
+    }
 }
 
 h2{
@@ -44,6 +53,10 @@ h2{
     color: $darkBlue;
     line-height: 1.1;
     margin-bottom: 2rem;
+
+    @include breakpoint-down(){
+        font-size: 1.8125rem;
+    }
 }
 
 h3{
@@ -87,13 +100,14 @@ p{
 .container{
     padding-right: 10rem;
     padding-left: 10rem;
+    
 
     @include breakpoint-down(){
-        display: block;
         padding-right: 1.5rem;
         padding-left: 1.5rem;
     }
 }
+
 
 .align-center{
     text-align: center;
@@ -102,6 +116,25 @@ p{
 .white-bg{
     background: white !important;
     color: $brightRed !important;
+}
+
+.overlay{
+    height: 100vh;
+    background: linear-gradient(to top, $VeryDarkBlue, transparent);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.noscroll{
+    overflow: hidden;
+}
+
+.clickable{
+    pointer-events: all !important;
 }
 
 

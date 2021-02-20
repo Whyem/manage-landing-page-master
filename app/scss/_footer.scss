@@ -3,12 +3,49 @@
     padding-bottom: 3.5rem;
     background: $VeryDarkBlue;
     color: white;
+    display: grid;
+
+    @include breakpoint-up(){
+        grid-template-columns: repeat(3,1fr) 2fr;
+        grid-template-rows: repeat(2,1fr);
+        grid-template-areas: 
+            "a c d e"
+            "b c d f"
+        ;
+    }
+
+    @include breakpoint-down(){
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "a a"
+            "b c"
+            "d d"
+            "e e"
+            "f f"
+        ;
+    }
 }
 
 .social__links{
+    grid-area: b;
+    align-self: end;
+
+    @include breakpoint-down(){
+        grid-area: d;
+        margin-bottom: 3.375rem;
+        justify-content: space-around;
+    }
+    
     >a{
         &:not(:last-child){
             margin-right: 0.6875rem;
+        }
+
+        >img{
+            @include breakpoint-down(){
+                width: 33px;
+            }
         }
     }
 }
@@ -26,8 +63,31 @@
     }
 }
 
+.col2{
+    grid-area: c;
+    @include breakpoint-down(){
+        grid-area: b;
+        margin-bottom: 3.5rem;
+    }
+}
+
+.col3{
+    grid-area: d;
+    @include breakpoint-down(){
+        grid-area: c;
+    }
+}
+
+
 .col4{
+    grid-area: e;
     text-align: right;
+
+    @include breakpoint-down(){
+        grid-area: a;
+        margin: 0 auto;
+        margin-bottom: 3.5rem;
+    }
 
     >input{
         border-radius: 50px;
@@ -51,13 +111,27 @@
     transition: opacity 300ms ease-in-out;
     cursor: pointer;
 
-    margin-bottom: 5.875rem;
-
     &:hover{
         opacity: 0.75;
     }
 }
 
 .logo__footer{
-    margin-bottom: 6.75rem;
+    grid-area: a;
+
+    @include breakpoint-down(){
+        grid-area: e;
+        margin: 0 auto;
+        margin-bottom: 3.5rem;
+    }
+}
+
+.copyright{
+    align-self: end;
+    text-align: right;
+    grid-area: f;
+    color: $DarkGrayishBlue;
+    @include breakpoint-down(){
+        margin: 0 auto;
+    }
 }

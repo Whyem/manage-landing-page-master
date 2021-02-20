@@ -1,5 +1,10 @@
 .quotes{
     margin-bottom: 11.125rem;
+
+    @include breakpoint-down(){
+        margin-bottom: 2.625rem;
+    }
+
     
     &__title{
         margin-bottom: 4.25rem;
@@ -13,6 +18,11 @@
     padding-bottom: 2.75rem;
     margin-right: 2rem;
 
+    @include breakpoint-down(){
+        padding-right: 1.875rem;
+        padding-left: 1.875rem;
+    }
+
     &>h3{
         margin-top: 0;
     }
@@ -20,7 +30,11 @@
     &>p{
 
         margin: 0 auto;
-        width: 47ch;
+        width: 33.5ch;
+        
+        @include breakpoint-up(){
+            width: 47ch;
+        }
         
         &::before{
             content: open-quote;

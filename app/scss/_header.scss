@@ -3,12 +3,12 @@
     padding-bottom: 3.5rem;
 
     @include breakpoint-down(){
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 2.75rem;
+        padding-bottom: 2.75rem;
     }
 
+
     &__links{
-        
         
         >a{
             color: $VeryDarkBlue;
@@ -22,6 +22,36 @@
                 color: $DarkGrayishBlue;
             }
         }
+
+
+        &__mobile{
+
+            background: white;
+            border-radius: 3px;
+            padding: 2.8125rem 7.375rem;
+            margin: 0 1.5625rem;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            opacity: 0;
+            
+            >a{
+                display: block;
+                color: $darkBlue;
+                font-weight: 500;
+                text-decoration: none;
+                transition: color 300ms ease-in-out;
+                &:not(:last-child){
+                    margin-bottom: 1.875rem;
+                }
+    
+                &:hover{
+                    color: $DarkGrayishBlue;
+                }
+            }
+        }
     }
 }
 
@@ -31,9 +61,25 @@
         width: 24px;
         display: block;
         background: $VeryDarkBlue;
+        transition: all 400ms ease-in-out;
+        transform-origin: 1px 2px;
 
         &:not(:last-child){
             margin-bottom: 4px;
+        }
+    }
+
+    &.closed{    
+        > span:first-child{
+            transform: rotate(45deg);
+            }
+    
+            > span:nth-child(2){
+                opacity: 0;
+        }
+    
+        > span:last-child{
+            transform: rotate(-45deg);                 
         }
     }
 }
