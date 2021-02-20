@@ -13,6 +13,12 @@
     &__text{
         >p{
             margin-bottom: 2.625rem;
+
+            @include breakpoint-down(){
+                width: 34ch;
+                margin: 0 auto;
+                margin-bottom: 2.625rem;
+            } 
         }
     }
 

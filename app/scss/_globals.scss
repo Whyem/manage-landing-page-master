@@ -21,7 +21,14 @@ body{
     min-height: 100vh;
     position: relative;
 
+    background-image: url('/images/Rectangle 11.svg') ,url('/images/Rectangle 11.svg');
+    background-repeat: no-repeat;
+    background-position: 690px -256px ,  -569px 1037px;
+
+
     @include breakpoint-down(){
+        background-image: url('/images/Rectangle 15.svg'), url('/images/Rectangle 16.svg') ;
+        background-position: 37px -171px , 207px 447px;
         text-align: center;
     }
 }

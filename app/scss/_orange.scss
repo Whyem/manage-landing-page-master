@@ -3,6 +3,13 @@
     padding-top: 4.375rem;
     padding-bottom: 4.375rem;
 
+    background-image: url('/images/bg-simplify-section-desktop.svg');
+    background-repeat: no-repeat;
+    
+    @include breakpoint-down(){
+        background-image: url('/images/bg-simplify-section-mobile.svg');
+    }
+
     >.container{
         @include breakpoint-down(){
             display: block;
